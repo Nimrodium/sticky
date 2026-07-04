@@ -27,6 +27,9 @@ pub fn get_stem_ext(path: &Path) -> Option<(String, String)> {
         None
     }
 }
+pub fn extract_file_extension(path: &Path) -> Option<String> {
+    get_stem_ext(path).map(|(_, ext)| ext)
+}
 // pub fn extract_file_extension(path: &Path) -> Option<String> {
 //     // does not use p.extension as i want to catch .tar.gz
 //     let name = path.file_name().and_then(|p| Some(p.to_string_lossy()));
