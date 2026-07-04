@@ -87,8 +87,9 @@ fn main() -> Result<(), String> {
                     default
                 }
             };
-            verbose!("extracting archive {archive:?} -> {target:?}");
+            // verbose!("extracting archive {archive:?} -> {target:?}");
             if !args.dry_run {
+                info!("extracting {archive:?} -> {target:?}");
                 format.extract(&archive, &target)?
             };
             success!("successfully extracted archive {archive:?} -> {target:?}");

@@ -51,7 +51,9 @@ impl FromStr for Format {
             "zip" => Ok(Self::Zip(Zip {})),
             "tar.gz" | "targz" => Ok(Self::TarGz(TarGz {})),
             "zstd" => Ok(Self::Zstd(Zstd {})),
-            _ => Err("not a valid archive format ( zip tar.gz zstd )".to_string()),
+            _ => Err(format!(
+                "{s} is not a valid archive format ( zip tar.gz zstd )"
+            )),
         }
     }
 }
